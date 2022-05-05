@@ -1,0 +1,17 @@
+.unfilled{
+    position: relative;
+    display: inline-block;
+}
+.unfilled .star{
+  color:#ebcf31;
+  font-size: 3rem;
+}
+
+.unfilled .filled{
+    position: absolute;
+    top:0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width:0;
+}
