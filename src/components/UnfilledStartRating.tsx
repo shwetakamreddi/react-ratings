@@ -22,21 +22,19 @@ const StarRating = (props: Props) => {
     starStyle,
     progressFilledColor,
     progressUnfilledColor,
-    ratingIconClassname,
+    ratingIconClassname
   } = props;
   return (
     <>
       {
         <div className="unfilled">
-          {data.map((star: data) => (
-              <AiOutlineStar
-                className={ratingIconClassname ? ratingIconClassname : 'star'}
-                style={{
-                  color: progressUnfilledColor
-                    ? progressUnfilledColor
-                    : '#ebcf31',
-                }}
-              />
+          {data.map(star => (
+            <AiOutlineStar
+              className={ratingIconClassname ? ratingIconClassname : 'star'}
+              style={{
+                color: progressUnfilledColor ? progressUnfilledColor : '#ebcf31'
+              }}
+            />
           ))}
           <FilledStarRating
             data={data}

@@ -2,7 +2,7 @@
     position: relative;
     display: inline-block;
 }
-.unfilled span .star{
+.unfilled .star{
   color:#ebcf31;
   font-size: 3rem;
 }

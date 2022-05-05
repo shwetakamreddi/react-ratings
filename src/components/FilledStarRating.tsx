@@ -25,7 +25,7 @@ function FilledStarRating(props: Props) {
               <AiFillStar
                 className={ratingIconClassname ? ratingIconClassname : 'star'}
                 style={{
-                  color: progressFilledColor ? progressFilledColor : '#ebcf31',
+                  color: progressFilledColor ? progressFilledColor : '#ebcf31'
                 }}
               />
             </span>

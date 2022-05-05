@@ -7,24 +7,24 @@ const App = () => {
   const data = [
     {
       count: 5,
-      rating: 3,
+      rating: 3
     },
     {
       count: 6,
-      rating: 4,
+      rating: 4
     },
     {
       count: 2,
-      rating: 2,
+      rating: 2
     },
     {
       count: 2,
-      rating: 1,
+      rating: 1
     },
     {
       count: 3,
-      rating: 2,
-    },
+      rating: 2
+    }
   ];
 
   const showRatingHeader = true;
@@ -39,7 +39,7 @@ const App = () => {
 
   const progressFilledColor = 'yellow';
   const progressUnfilledColor = 'yellow';
-  const ratingIconClassname='star'
+  const ratingIconClassname = 'star';
   return (
     <div>
       <StarRating
@@ -48,6 +48,7 @@ const App = () => {
         showRatingHeader={showRatingHeader}
         progressFilledColor={progressFilledColor}
         progressUnfilledColor={progressUnfilledColor}
+        ratingIconClassname={ratingIconClassname}
       />
     </div>
   );
