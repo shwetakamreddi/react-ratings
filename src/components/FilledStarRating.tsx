@@ -12,24 +12,34 @@ interface Props {
   starStyle: string;
   progressFilledColor?: string;
   ratingIconClassname?: any;
+  FilledRatingIcon?: any;
 }
 
 function FilledStarRating(props: Props) {
-  const { data, starStyle, progressFilledColor, ratingIconClassname } = props;
+  const { data, starStyle, progressFilledColor, ratingIconClassname, FilledRatingIcon } = props;
   return (
     <>
       {
         <div className="filled" style={{ width: starStyle }}>
-          {data.map((star: data) => (
-            <span>
-              <AiFillStar
-                className={ratingIconClassname ? ratingIconClassname : 'star'}
-                style={{
-                  color: progressFilledColor ? progressFilledColor : '#ebcf31'
-                }}
-              />
-            </span>
-          ))}
+          {FilledRatingIcon
+            ? data.map((star: data) => (
+                <span
+                  className={ratingIconClassname ? ratingIconClassname : 'star'}
+                  style={{
+                    color: progressFilledColor ? progressFilledColor : '#ebcf31'
+                  }}>
+                  {FilledRatingIcon}
+                </span>
+              ))
+            : data.map((star: data) => (
+                <span
+                  className={ratingIconClassname ? ratingIconClassname : 'star'}
+                  style={{
+                    color: progressFilledColor ? progressFilledColor : '#ebcf31'
+                  }}>
+                  <AiFillStar />
+                </span>
+              ))}
         </div>
       }
     </>

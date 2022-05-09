@@ -14,6 +14,8 @@ interface Props {
   progressFilledColor?: string;
   progressUnfilledColor?: string;
   ratingIconClassname?: any;
+  FilledRatingIcon?: any;
+  UnfilledRatingIcon?: any;
 }
 
 const StarRating = (props: Props) => {
@@ -22,25 +24,39 @@ const StarRating = (props: Props) => {
     starStyle,
     progressFilledColor,
     progressUnfilledColor,
-    ratingIconClassname
+    ratingIconClassname,
+    FilledRatingIcon,
+    UnfilledRatingIcon
   } = props;
   return (
     <>
       {
         <div className="unfilled">
-          {data.map(star => (
-            <AiOutlineStar
-              className={ratingIconClassname ? ratingIconClassname : 'star'}
-              style={{
-                color: progressUnfilledColor ? progressUnfilledColor : '#ebcf31'
-              }}
-            />
-          ))}
+          {UnfilledRatingIcon
+            ? data.map(star => (
+                <span
+                  className={ratingIconClassname ? ratingIconClassname : 'star'}
+                  style={{
+                    color: progressUnfilledColor ? progressUnfilledColor : '#ebcf31'
+                  }}>
+                  {UnfilledRatingIcon}
+                </span>
+              ))
+            : data.map((star: data) => (
+                <span
+                  className={ratingIconClassname ? ratingIconClassname : 'star'}
+                  style={{
+                    color: progressFilledColor ? progressFilledColor : '#ebcf31'
+                  }}>
+                  <AiOutlineStar />
+                </span>
+              ))}
           <FilledStarRating
             data={data}
             starStyle={starStyle}
             progressFilledColor={progressFilledColor}
             ratingIconClassname={ratingIconClassname}
+            FilledRatingIcon={FilledRatingIcon}
           />
         </div>
       }
